@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Didomi-Consent';
+     
+  openSideNav = false;
+  
+  constructor() { }
+  unToggle() { }
 }

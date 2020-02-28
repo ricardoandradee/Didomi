@@ -1,0 +1,25 @@
+<section>
+    <form fxLayout="column" fxLayoutAlign="center center" #f="ngForm" fxLayoutGap="10px" (ngSubmit)="onSubmit(f)">
+        <mat-form-field>
+        <input type="email" matInput placeholder="E-mail" #emailInput="ngModel"
+            name="email" id="email" ngModel email required>
+            <mat-error *ngIf="!emailInput.hasError('required')">E-mail is invalid</mat-error>
+            <mat-error *ngIf="emailInput.hasError('required')">E-mail is required</mat-error>
+        </mat-form-field>
+        <mat-form-field hintLabel="Name should be at least 6 characters long.">
+        <input type="name" matInput placeholder="Name" #pwInput="ngModel"
+            name="name" id="name" ngModel required minlength="6">
+            <mat-hint align="end">{{ pwInput.value?.length }} / 6 </mat-hint>
+            <mat-error>Name should contain at least 6 characters long.</mat-error>
+        </mat-form-field>
+
+        <div class="checkbox-wrapper" [ngClass]="{'checkbox-vertival': !tmp }">
+            <mat-card-title>I Agree to: </mat-card-title>
+            <mat-checkbox ngModel #rnInput [required]="!bstaInput.checked && !ctavsInput.checked" name="receiveNewsletter" color="primary">Receive Newsletter</mat-checkbox>
+            <mat-checkbox ngModel #bstaInput [required]="!rnInput.checked && !ctavsInput.checked" name="beShownTargetedAds" color="primary">Be shown targeted ads</mat-checkbox>
+            <mat-checkbox ngModel #ctavsInput [required]="!rnInput.checked && !bstaInput.checked" name="contributeToAnonymousVisitStatistics" color="primary">Contribute to anonymous visit statistics</mat-checkbox>
+            <mat-error *ngIf="!rnInput.checked && !bstaInput.checked && !ctavsInput.checked">You should consent to at least one item.</mat-error>
+        </div>
+        <button type="submit" [disabled]="f.invalid" mat-raised-button color="warn">Submit</button>
+    </form>
+</section>

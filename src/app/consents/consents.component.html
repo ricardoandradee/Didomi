@@ -1,0 +1,28 @@
+
+<div class="container">
+  <table mdbTable striped="true">
+    <thead>
+    <tr>
+      <th *ngFor="let head of headElements;" scope="col"> {{head}} </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr mdbTableCol *ngFor="let con of pagConsents">
+      <th scope="row">{{con?.id}}</th>
+      <td>{{con?.name}}</td>
+      <td>{{con?.email}}</td>
+      <td>{{buildConsentString(con)}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<div class="d-flex justify-content-center">
+  <pagination [boundaryLinks]="true"
+            [totalItems]="pagination.totalItems"
+            [itemsPerPage]="pagination.itemsPerPage"
+            [(ngModel)]="pagination.currentPage"
+            (pageChanged)="pageChanged($event)"
+            previousText="&lsaquo;" nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;">
+
+  </pagination>
+</div>

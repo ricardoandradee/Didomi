@@ -1,0 +1,19 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+$didomi-app-primary: mat-palette($mat-blue, A200, A100, A400);
+$didomi-app-accent:  mat-palette($mat-indigo, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$didomi-app-warn: mat-palette($mat-red);
+$background-color: map_get($mat-grey, 100);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$didomi-app-theme: mat-light-theme($didomi-app-primary, $didomi-app-accent, $didomi-app-warn);
+
+// Insert custom background color
+$background: map-get($didomi-app-theme, background);
+$background: map_merge($background, (background: $background-color));
+$didomi-app-theme: map_merge($didomi-app-theme, (background: $background));
+
+@include angular-material-theme($didomi-app-theme);
