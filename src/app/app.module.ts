@@ -10,13 +10,13 @@ import { PaginationModule } from 'ngx-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ConsentService } from './Services/consent.service';
-import { ConsentsComponent } from './consents/consents.component';
+import { ConsentsComponent } from './components/consents/consents.component';
 import { FlexLayoutModule} from '@angular/flex-layout';
 
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-import { GiveConsentComponent } from './give-consent/give-consent.component';
-import { SidenavComponent } from './sidenav/sidenav.component';
-import { HeaderComponent } from './header/header.component';
+import { GiveConsentComponent } from './components/give-consent/give-consent.component';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [

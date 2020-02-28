@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ConsentsComponent } from './consents/consents.component';
-import { GiveConsentComponent } from './give-consent/give-consent.component';
+import { ConsentsComponent } from './components/consents/consents.component';
+import { GiveConsentComponent } from './components/give-consent/give-consent.component';
 
 const routes: Routes = [
     { path: '', redirectTo: 'consents', pathMatch: 'full' },

@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ConsentService } from '../Services/consent.service';
-import { Consent } from '../Models/consent';
+import { ConsentService } from '../../Services/consent.service';
+import { Consent } from '../../Models/consent';
 import { NgForm } from '@angular/forms';
-import { AlertifyService } from '../Services/alertify.service';
+import { AlertifyService } from '../../Services/alertify.service';
 import { Router} from "@angular/router";
 import { Subscription } from 'rxjs';
 

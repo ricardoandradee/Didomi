@@ -71,6 +71,14 @@
       "beShownTargetedAds": true,
       "contributeToAnonymousVisitStatistics": "",
       "id": 9
+    },
+    {
+      "email": "jonathan@gmail.com",
+      "name": "Jonathan Castro",
+      "receiveNewsletter": true,
+      "beShownTargetedAds": "",
+      "contributeToAnonymousVisitStatistics": true,
+      "id": 10
     }
   ]
 }

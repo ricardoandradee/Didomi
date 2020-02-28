@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Consent } from '../Models/consent';
-import { ConsentService } from '../Services/consent.service';
+import { Consent } from '../../Models/consent';
+import { ConsentService } from '../../Services/consent.service';
 import { Subscription } from 'rxjs';
-import { Pagination, PaginatedResult } from '../Models/pagination';
+import { Pagination, PaginatedResult } from '../../Models/pagination';
 
 @Component({
   selector: 'app-consents',
