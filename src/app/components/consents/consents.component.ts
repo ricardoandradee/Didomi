@@ -19,14 +19,13 @@ export class ConsentsComponent implements OnInit, OnDestroy {
   constructor(private consentService: ConsentService) { }
 
   ngOnInit() {
-    this.pagination = { currentPage: 1, itemsPerPage: 2 } as Pagination;    
+    this.pagination = { currentPage: 1, itemsPerPage: 2 } as Pagination;
     this.GetConsents();
   }
 
   private GetConsents() {
-    this.subscription = this.consentService.getPaginatedConsents(this.pagination.currentPage, this.pagination.itemsPerPage).subscribe((consentsResponse: PaginatedResult<Consent[]>) => {
-      console.log(consentsResponse);
-      
+    this.subscription = this.consentService.getPaginatedConsents(this.pagination.currentPage, this.pagination.itemsPerPage)
+        .subscribe((consentsResponse: PaginatedResult<Consent[]>) => {
       this.pagConsents = consentsResponse.result;
       this.pagination = consentsResponse.pagination;
     },
@@ -35,15 +34,15 @@ export class ConsentsComponent implements OnInit, OnDestroy {
   }
 
   buildConsentString(consent: Consent): string {
-    let consentArray = [];
-    if(consent.receiveNewsletter){
-      consentArray.push("Receive newsletter");
+    const consentArray = [];
+    if (consent.receiveNewsletter) {
+      consentArray.push('Receive newsletter');
     }
-    if(consent.beShownTargetedAds){
-      consentArray.push("Be shown targeted ads");
+    if (consent.beShownTargetedAds){
+      consentArray.push('Be shown targeted ads');
     }
-    if(consent.contributeToAnonymousVisitStatistics){
-      consentArray.push("Contribute to anonymous visit statistics");
+    if (consent.contributeToAnonymousVisitStatistics){
+      consentArray.push('Contribute to anonymous visit statistics');
     }
     return consentArray.join(', ');
   }
@@ -54,7 +53,8 @@ export class ConsentsComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    if (this.subscription)
+    if (this.subscription) {
       this.subscription.unsubscribe();
+    }
   }
 }

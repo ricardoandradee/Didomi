@@ -19,7 +19,7 @@
       "dom"
     ]
   },
-  "include": ["node_module/angular-bootstrap-md/**/*.ts", "src/**/*.ts"],
+  "include": ["node_module/angular-bootstrap-md/**/*.ts", "src/**/*.ts", "server/db-data.ts"],
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true
