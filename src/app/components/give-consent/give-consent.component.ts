@@ -13,7 +13,6 @@ import { Subscription } from 'rxjs';
 })
 export class GiveConsentComponent implements OnInit, OnDestroy {
   private subscription: Subscription;
-  tmp = false;
   constructor(private consentService: ConsentService, private alertify: AlertifyService, private router: Router) { }
 
   createConsent(consent: Consent) {
@@ -38,7 +37,8 @@ export class GiveConsentComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    if (this.subscription)
+    if (this.subscription) {
       this.subscription.unsubscribe();
+    }
   }
 }

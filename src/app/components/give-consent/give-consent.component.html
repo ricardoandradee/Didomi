@@ -13,7 +13,7 @@
             <mat-error>Name should contain at least 6 characters long.</mat-error>
         </mat-form-field>
 
-        <div class="checkbox-wrapper" [ngClass]="{'checkbox-vertival': !tmp }">
+        <div fxLayout="column" fxLayoutAlign="center start">
             <mat-card-title>I Agree to: </mat-card-title>
             <mat-checkbox ngModel #rnInput [required]="!bstaInput.checked && !ctavsInput.checked" name="receiveNewsletter" color="primary">Receive Newsletter</mat-checkbox>
             <mat-checkbox ngModel #bstaInput [required]="!rnInput.checked && !ctavsInput.checked" name="beShownTargetedAds" color="primary">Be shown targeted ads</mat-checkbox>
